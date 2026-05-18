@@ -1,5 +1,5 @@
 import type {Plugin, ViteDevServer} from 'vite';
-import {type ChildProcess, execSync, spawn} from 'child_process';
+import {type ChildProcess, execSync, spawn} from 'node:child_process';
 import pc from 'picocolors';
 
 export interface TailscaleFunnelOptions {
@@ -81,7 +81,7 @@ export default function tailscaleFunnel(options: TailscaleFunnelOptions = {}): P
       }
 
       if (!hostname) {
-        console.log(
+        console.warn(
           pc.yellow('\n  ⚠ Could not detect Tailscale hostname. Set hostname option or ensure Tailscale is running.\n')
         );
         return;
