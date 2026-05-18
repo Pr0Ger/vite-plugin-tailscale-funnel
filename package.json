@@ -1,0 +1,58 @@
+{
+  "name": "@pr0ger/vite-plugin-tailscale-funnel",
+  "version": "0.1.0",
+  "description": "Vite plugin that starts Tailscale Funnel or Serve when the dev server starts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "tailscale",
+    "funnel",
+    "tunnel",
+    "dev-server"
+  ],
+  "author": "Sergey Petrov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pr0Ger/vite-plugin-tailscale-funnel.git"
+  },
+  "peerDependencies": {
+    "vite": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "picocolors": "^1.0.0"
+  }
+}
