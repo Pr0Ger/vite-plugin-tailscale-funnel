@@ -96,4 +96,4 @@ jobs:
           }
 
       - name: Publish to JSR
-        run: npx --yes jsr publish --provenance
+        run: npx --yes jsr publish
