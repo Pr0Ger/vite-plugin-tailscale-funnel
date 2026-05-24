@@ -60,6 +60,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -80,6 +83,9 @@ jobs:
             echo "Tag version ($TAG) does not match jsr.json ($JSR_VERSION)"
             exit 1
           }
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
       - name: Publish to JSR
         run: npx --yes jsr publish
