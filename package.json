@@ -1,6 +1,6 @@
 {
   "name": "@pr0ger/vite-plugin-tailscale-funnel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vite plugin that starts Tailscale Funnel or Serve when the dev server starts",
   "type": "module",
   "main": "./dist/index.cjs",
